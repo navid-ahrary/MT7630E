@@ -4,7 +4,7 @@ if (( $EUID != 0 )); then
     exit 1
 fi
 KERNEL=${1-$(uname -r)}
-make KERNEL=$KERNEL
+make
 make install KERNEL=$KERNEL
 modprobe mt7630e -S $KERNEL
 modprobe mt76xx -S $KERNEL
