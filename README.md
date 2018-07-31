@@ -9,39 +9,38 @@ Easy installation package for Mediatek MT7630E Wifi + Bluetooth Combo Linux Driv
 * firmware: Firmware binary code (MT7650E234.bin is for Wi-Fi, mt76x0.bin is for Bluetooth)
 
 
-# Installation
+# Installation  RHEL/CENTOS  (tested on Fedora28)
 
 **You need kernel headers to build the driver**
 
-As an example, on Debian and derivatives, assuming you're on an amd64 system:
+	sudo dnf install kernel-headers-$(uname -r) kernel-devel-$(uname -r)
 
-```sh
-sudo apt install build-essential linux-headers-amd64
-```
+that $(uname -r) returns the kernel version
 
 That's all for dependencies.
 
-First give some file execution permission:
+Next give some file execution permission:
 
-     chmod +x install test uninstall bpatch
+	chmod +x install test uninstall bpatch
 
 Now to install it, run:
 
-     ./install
+	sudo ./install
 
 To test it without installing, run:
 
-     ./test
+	sudo ./test
 
 To uninstall, run:
 
-      ./uninstall
+	sudo ./uninstall
 
 To install with dkms:
 
     sudo make dkms
 
 The driver will automatically load at startup...
+I recommend you restart your machine
 
 # Installing inside a container (chroot) environment
 
@@ -137,6 +136,7 @@ Not being signed, this driver is **not expected to work on secure boot**.
 
     The original source was taken from https://github.com/kuba-moo/mt7630e
     Some patches for extended kernel support are taken from https://github.com/benjarobin/MT7630E
+    Changed a little for working on RHEL/CENTOS taken from https://github.com/neurobin/MT7630E
 
 **Note:** Even though the original source was taken from kuba-moo, it no longer resembles that of the original. If you want to apply a patch that works with other sources, be ware that the line number and content may or may not match i.e you will have to be careful applying patches.
 
