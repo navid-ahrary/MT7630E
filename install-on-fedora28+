@@ -1,7 +1,4 @@
 #!/bin/bash
-set -e
-BASEDIR="$(dirname "$BASH_SOURCE")"
-cd "$BASEDIR"
 if (( $EUID != 0 )); then
     printf "\n-----Sorry! Run with root privilege (for example with 'sudo ./install')\n\n"
     exit 1
