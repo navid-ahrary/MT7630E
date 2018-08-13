@@ -10,6 +10,8 @@ Easy installation package for Mediatek MT7630E Wifi + Bluetooth Combo Linux Driv
 
 
 # Installation  RHEL/CENTOS  (tested on Fedora28)
+for other dists contact me to help
+ahrary.navid@gmail.com
 
 **You need kernel headers to build the driver**
 
